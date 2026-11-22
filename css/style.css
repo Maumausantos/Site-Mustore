@@ -1,0 +1,322 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* Cores usuais */
+:root {
+
+  --laranja: #ff66009c;
+  --preto: rgba(0, 0, 0, 0.8);
+  --branco: #ffffff;
+  --carvao: #615b5b;
+  --laranja-escuro: #ea6a14;
+
+}
+
+
+/* Reset da página */
+* {
+
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Plus Jakarta Sans", sans-serif;
+
+}
+
+/* Scroll da página */
+html {
+
+  scroll-behavior: smooth;
+  margin-left: 90px;
+}
+
+/* Configuração do corpo */
+body {
+  height: 100vh;
+  background: var(--branco);
+}
+
+/* Menu lateral */
+
+nav.menu-lateral {
+  width: 80px;
+  height: 100%;
+  background-color: #202020;
+  padding: 40px 0 40px 1%;
+  box-shadow: 3px 0 0 var(--laranja);
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  transition: .5s;
+}
+
+nav.menu-lateral.expandir {
+  width: 300px;
+}
+
+.btn-expandir {
+  width: 100%;
+  padding-left: 10px;
+
+}
+
+.btn-expandir>i {
+  color: #fff;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+ul {
+  height: 100%;
+  list-style: none;
+}
+
+ul li.item-menu {
+  transition: .2s;
+}
+
+ul li.ativo {
+  background: var(--laranja-escuro);
+}
+
+ul li.item-menu:hover {
+  background: var(--laranja-escuro);
+
+}
+
+ul li.item-menu a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 20px;
+  padding: 20px 4%;
+  display: flex;
+  line-height: 40px;
+}
+
+ul li.item-menu a .txt-link {
+  margin-left: 70px;
+  transition: .5s;
+  opacity: 0;
+
+}
+
+nav.menu-lateral.expandir .txt-link {
+  margin-left: 40px;
+  opacity: 1;
+}
+
+ul li.item-menu a .icon>i {
+  font-size: 30px;
+}
+
+/* Sliders */
+
+.slider {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.slides {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.slides>img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+.slide {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  opacity: 0;
+  object-fit: inherit;
+  transition: opacity 0.8s ease;
+}
+
+
+.slide.ativo {
+  opacity: 1;
+}
+
+/* Categoria*/
+
+.titulo {
+  font-size: 3rem;
+  margin: 20px 0;
+  color: var(--laranja);
+  text-align: center;
+}
+
+.produtos {
+
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 30px;
+
+}
+
+.produto {
+
+  background: white;
+
+  border-radius: 15px;
+
+  margin: 2px;
+
+  padding: 20px;
+
+  text-align: center;
+
+  box-shadow: 0 4px 15px rgba(213, 208, 204, 0.3);
+
+  transition: .3s;
+
+  margin-left: 100px;
+
+}
+
+.produto img {
+
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+
+}
+
+.produto h3 {
+
+  margin: 15px 0;
+
+}
+
+.produto span {
+
+  display: block;
+
+  color: var(--laranja);
+
+  font-size: 1.2rem;
+
+  font-weight: bold;
+
+  margin-bottom: 15px;
+
+}
+
+.btn-comprar, button {
+
+  background: var(--laranja);
+
+  color: white;
+
+  border: none;
+
+  padding: 12px 25px;
+
+  border-radius: 8px;
+
+  cursor: pointer;
+
+  font-weight: bold;
+
+  transition: .3s;
+
+}
+
+.btn-comprar:hover {
+
+  transform: translateY(-9px);
+
+
+}
+
+/* Rodapé do site*/
+
+footer {
+
+  background: var(--preto);
+
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  gap: 20px;
+  padding: 30px;
+}
+
+footer h1 {
+
+  font-size: 2rem;
+
+  color: var(--laranja);
+
+  margin-bottom: 10px;
+
+}
+
+footer p {
+  display: flex;
+}
+
+footer a {
+
+  font-size: 1rem;
+  color: var(--branco);
+  text-decoration: none;
+
+}
+
+footer i:hover {
+  color: var(--laranja);
+  transition: .3s;
+
+}
+
+footer i {
+  margin-right: 15px;
+  font-size: 1.5rem;
+}
+
+#bi-whatsapp {
+  color: #25D366;
+  font-size: 1.5rem;
+}
+
+#bi-instagram {
+  color: #E1306C;
+  font-size: 1.5rem;
+}
+
+/* Responsivo */
+
+@media screen and (max-width: 768px) {
+
+  header {
+
+    display: none;
+
+  }
+
+  footer {
+
+    flex-direction: column;
+
+    gap: 10px;
+
+  }
+
+}
